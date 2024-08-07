@@ -1,0 +1,40 @@
+
+.li{
+    list-style: none;
+}
+.Btn:focus{
+    background-color: #daa520;
+}
+.Btn{
+    display: flex;
+    width: 130px;
+    height: auto;
+    flex-wrap: wrap;
+    padding: 8px 3px;
+    text-transform: capitalize;
+    border: none;
+    border-radius: 10px;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+    margin: 3px 6px 3px;
+}
+.Btn:hover{
+    background-color: #daa520;
+    border-radius: 10px;
+}
+.iconBtn{
+    width: 25px;
+    height: auto;
+    object-fit: cover;
+}
+@media(max-width:900px){
+    .Btn{
+        width: 210px;
+    }
+}
+@media(max-width:465px){
+    .Btn{
+        width: 120px;
+    }
+}
