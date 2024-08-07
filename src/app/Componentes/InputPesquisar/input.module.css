@@ -24,3 +24,8 @@
     text-overflow: ellipsis;
 }
 
+@media(max-width:600px){
+    .containerInput{
+        padding: 15px;
+    }
+}

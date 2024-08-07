@@ -46,7 +46,7 @@ import saladaNicoise from "@/../public/img/salada-nicoise.jpg";
       categoria: "Massas",
       preco: "25,00",
       descricao:
-        "Uma maravilhosa lasanha com recheios variados como carne moída, frango, presunto e queijo, legumos e molho branco ou vermelho",
+        "Uma maravilhosa lasanha com recheios variados como carne moída, frango, presunto e queijo, legumes e molho branco ou vermelho",
       imagem: lasanha,
     },
     {

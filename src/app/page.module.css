@@ -39,9 +39,9 @@
 }
 @media(max-width:900px){
   .secaoBtn{
-    min-height: 180px;
+    min-height: 245px;
     align-content: center;
-    justify-content: space-around;
+    justify-content:center;
     margin: 25px 0px 8px;
   }
   .secaoBarraPesquisar{
