@@ -9,13 +9,13 @@ import BarraPesquisar from "./Componentes/InputPesquisar/inputPesquisar";
 import CardItem from "./Componentes/CardItem/cardItem";
 
 //icons Btn
-import Entradas from "../../public/assets/entrada.png";
-import Massas from "../../public/assets/massa.png";
-import Carnes from "../../public/assets/carne.png";
-import Bebidas from "../../public/assets/bebidas.png";
-import Saladas from "../../public/assets/salada.png";
-import Sobremesa from "../../public/assets/sobremesa.png";
-import LupaPesquisar from "../../public/assets/lupa.png"
+import Entradas from "@/app/assets/entrada.png";
+import Massas from "@/app/assets/massa.png";
+import Carnes from "@/app/assets/carne.png";
+import Bebidas from "@/app/assets/bebidas.png";
+import Saladas from "@/app/assets/salada.png";
+import Sobremesa from "@/app/assets/sobremesa.png";
+import LupaPesquisar from "@/app/assets/lupa.png"
 
 export default function Home() {
 

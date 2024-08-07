@@ -1,6 +1,6 @@
 import style from "../Banner/banner.module.css";
 
-import imagemBanner from "@/../public/Assets/banner.png"
+import imagemBanner from "@/app/assets/banner.png"
 
 import Image from "next/image";
 
