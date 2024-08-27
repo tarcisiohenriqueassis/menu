@@ -71,7 +71,7 @@ import saladaNicoise from "@/../public/img/salada-nicoise.jpg";
       id: 5,
       nome: "Nhoque",
       categoria: "Massas",
-      preco:" 8,99",
+      preco:" 28,99",
       descricao:
         "Massa feita de farinha de trigo e ovos, servida com molhos simples ou elaborados como, manteiga e parmesão, frango ao creme ou camarão alho e oleo",
       imagem: nhoque,
@@ -80,7 +80,7 @@ import saladaNicoise from "@/../public/img/salada-nicoise.jpg";
       id: 6,
       nome: "Bruschetta",
       categoria: "Entradas",
-      preco: "9,20",
+      preco: "19,90",
       descricao:
         "Prato original da Itália, que leva fatias de pão italiano torrado, tomate picado, alho, manjericão e azeite",
       imagem: bruschetta,
@@ -179,7 +179,7 @@ import saladaNicoise from "@/../public/img/salada-nicoise.jpg";
       id: 17,
       nome: "Cheesecake",
       categoria: "Sobremesas",
-      preco:" 8.99",
+      preco:" 28.99",
       descricao:
         "Típica sobremesa dos Estados Unidos, que leva bolo, cream cheese e calda de frutas",
       imagem: cheesecake,
@@ -188,7 +188,7 @@ import saladaNicoise from "@/../public/img/salada-nicoise.jpg";
       id: 18,
       nome: "Banoffee",
       categoria: "Sobremesas",
-      preco:" 9.99",
+      preco:" 19.99",
       descricao:
         "Uma sobremesa inglesa, feita a base de biscoito triturado com manteiga, uma camada de doce de leite, banana fatiada e chantilly",
       imagem: banoffee,
@@ -197,7 +197,7 @@ import saladaNicoise from "@/../public/img/salada-nicoise.jpg";
       id: 19,
       nome: "Mil-folhas",
       categoria: "Sobremesas",
-      preco:" 9.99",
+      preco:" 19.99",
       descricao:
         "Sobremesa de origem francesa, feita com massa folhada crocante e recheio cremoso de baunilha, chocolate ou frutas e açucar de confeiteiro",
       imagem: milFolhas,
@@ -206,7 +206,7 @@ import saladaNicoise from "@/../public/img/salada-nicoise.jpg";
       id: 20,
       nome: "Pudim",
       categoria: "Sobremesas",
-      preco: "5.99",
+      preco: "25.99",
       descricao:
         "Sobremesa cremosa e gelada muito popular no Brasil, feita com leite condesado, leite e ovos",
       imagem: pudim,
@@ -224,7 +224,7 @@ import saladaNicoise from "@/../public/img/salada-nicoise.jpg";
       id: 22,
       nome: "Refrigerante",
       categoria: "Bebidas",
-      preco: "7.99",
+      preco: "17.99",
       descricao:
         "Um refrescante refrigerante de cola com pequenos pedaços de limão e raspas de hortelã",
       imagem: refrigerante,

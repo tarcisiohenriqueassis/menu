@@ -9,7 +9,8 @@ export default function BotoesPesquisa(props){
                 <button onClick={props.funcao} className={style.Btn}>
                     <Image className={style.iconBtn} src={props.iconBtn}/>
                     {props.tipoPrato}
-                </button></li>
+                </button>
+            </li>
             </ul>
     )
 }

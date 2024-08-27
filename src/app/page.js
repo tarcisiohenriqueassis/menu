@@ -1,5 +1,9 @@
-//array de produtos cardapio
-import produtos from "./arrayProdutos/produtosCardapio";
+"use client"
+
+//useState
+import { useState } from "react";
+
+//style
 import styles from "./page.module.css";
 
 //Componentes 
@@ -15,17 +19,27 @@ import Carnes from "@/app/assets/carne.png";
 import Bebidas from "@/app/assets/bebidas.png";
 import Saladas from "@/app/assets/salada.png";
 import Sobremesa from "@/app/assets/sobremesa.png";
-import LupaPesquisar from "@/app/assets/lupa.png"
+import LupaPesquisar from "@/app/assets/lupa.png";
+import SetaVoltarTopo from "@/app/assets/seta.webp";
 
-export default function Home() {
+//service
+import FiltrarPrato from "@/app/service/service.js";
+
+//array de produtos cardapio
+import produtos from "./arrayProdutos/produtosCardapio";
+import Footer from "./Componentes/Footer/footer";
+
+export default function Home() { 
 
   const DadosCardapio = produtos;
+
+  const[listaCardapio, setListaCardapio] = useState(DadosCardapio)
 
   return (
     <main className={styles.main}>
      <Banner/>
      <section className={styles.secaoBtn}>
-      <Btn tipoPrato="Entradas" iconBtn={Entradas}/>
+      <Btn tipoPrato="Entradas" iconBtn={Entradas} funcao={()=> FiltrarPrato("Entradas")}/>
       <Btn tipoPrato="Massas" iconBtn={Massas}/>
       <Btn tipoPrato="Carnes" iconBtn={Carnes}/>
       <Btn tipoPrato="Bebidas" iconBtn={Bebidas}/>
@@ -36,7 +50,7 @@ export default function Home() {
       <BarraPesquisar imagemIconPesquisar={LupaPesquisar} title="Pesquisar" placeholder="Pesquise um prato ou bebidas de nosso restaurante"/>
      </section>
      <section className={styles.secaoCardsPratos}>
-     { DadosCardapio.map( (produto) =>  ( 
+     {listaCardapio.map( (produto) =>  ( 
         <CardItem 
         key={produto.id}
         imagemItem={produto.imagem}
@@ -46,6 +60,7 @@ export default function Home() {
         valorItem={produto.preco} />
       )) }
      </section>
+     <Footer link="/" textoFooter="Desenvolvido por Tarcisio H" imagemIconBtn={SetaVoltarTopo} />
     </main>
   );
 }
