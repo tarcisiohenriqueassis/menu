@@ -11,6 +11,7 @@ import Banner from "./Componentes/Banner/banner";
 import Btn from "./Componentes/Btn/Btn";
 import BarraPesquisar from "./Componentes/InputPesquisar/inputPesquisar";
 import CardItem from "./Componentes/CardItem/cardItem";
+import Footer from "./Componentes/Footer/footer";
 
 //icons Btn
 import Entradas from "@/app/assets/entrada.png";
@@ -23,44 +24,55 @@ import LupaPesquisar from "@/app/assets/lupa.png";
 import SetaVoltarTopo from "@/app/assets/seta.webp";
 
 //service
-import FiltrarPrato from "@/app/service/service.js";
 
 //array de produtos cardapio
-import produtos from "./arrayProdutos/produtosCardapio";
-import Footer from "./Componentes/Footer/footer";
+import ProdutosCardapio from "@/app/arrayProdutos/produtosCardapio.js";
 
 export default function Home() { 
 
-  const DadosCardapio = produtos;
+  const[listaCardapio, setListaCardapio] = useState(ProdutosCardapio)
+ 
+  //Filtra a categoria do prato 
+  const FiltrarCategoriaPrato = (Categoria) =>{ 
+   return setListaCardapio(ProdutosCardapio.filter((produto)=> produto.categoria === Categoria))
+}
 
-  const[listaCardapio, setListaCardapio] = useState(DadosCardapio)
+const BuscarProduto = (textoDigitado) =>{ return setListaCardapio(ProdutosCardapio.filter((produto)=> produto.nome.toLocaleLowerCase().includes(textoDigitado.toLocaleLowerCase()) || 
+   ProdutosCardapio.descricao.toLocaleLowerCase().includes(textoDigitado.toLocaleLowerCase())
+  ))
+}
 
   return (
     <main className={styles.main}>
      <Banner/>
      <section className={styles.secaoBtn}>
-      <Btn tipoPrato="Entradas" iconBtn={Entradas} funcao={()=> FiltrarPrato("Entradas")}/>
-      <Btn tipoPrato="Massas" iconBtn={Massas}/>
-      <Btn tipoPrato="Carnes" iconBtn={Carnes}/>
-      <Btn tipoPrato="Bebidas" iconBtn={Bebidas}/>
-      <Btn tipoPrato="Saladas" iconBtn={Saladas}/>
-      <Btn tipoPrato="Sobremesas" iconBtn={Sobremesa}/>
+      <Btn tipoPrato="Entradas" iconBtn={Entradas} funcao={()=> FiltrarCategoriaPrato("Entradas")}/>
+      <Btn tipoPrato="Massas" iconBtn={Massas} funcao={()=> FiltrarCategoriaPrato("Massas")}/>
+      <Btn tipoPrato="Carnes" iconBtn={Carnes} funcao={()=> FiltrarCategoriaPrato("Carnes")}/>
+      <Btn tipoPrato="Bebidas" iconBtn={Bebidas} funcao={()=> FiltrarCategoriaPrato("Bebidas")}/>
+      <Btn tipoPrato="Saladas" iconBtn={Saladas} funcao={()=> FiltrarCategoriaPrato("Saladas")}/>
+      <Btn tipoPrato="Sobremesas" iconBtn={Sobremesa} funcao={()=> FiltrarCategoriaPrato("Sobremesas")}/>
      </section>
      <section className={styles.secaoBarraPesquisar}>
-      <BarraPesquisar imagemIconPesquisar={LupaPesquisar} title="Pesquisar" placeholder="Pesquise um prato ou bebidas de nosso restaurante"/>
+      <BarraPesquisar
+      imagemIconPesquisar={LupaPesquisar} 
+      title="Pesquisar" 
+      placeholder="Pesquise um prato ou bebidas de nosso restaurante" onchage={(event) =>BuscarProduto(event.target.value)}/>
      </section>
      <section className={styles.secaoCardsPratos}>
-     {listaCardapio.map( (produto) =>  ( 
+     {listaCardapio.map( (produto) =>( 
         <CardItem 
-        key={produto.id}
+        key={produto.id}  
         imagemItem={produto.imagem}
         nomeItem={produto.nome} 
         tipoItem={produto.categoria}
         resumoItem={produto.descricao} 
         valorItem={produto.preco} />
-      )) }
+      )) 
+      }
      </section>
-     <Footer link="/" textoFooter="Desenvolvido por Tarcisio H" imagemIconBtn={SetaVoltarTopo} />
+    
     </main>
   );
 }
+// <Footer link="/" textoFooter="Desenvolvido por Tarcisio H" imagemIconBtn={SetaVoltarTopo} />

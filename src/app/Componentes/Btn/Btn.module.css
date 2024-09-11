@@ -39,9 +39,9 @@
     font-weight: 600;
 }
 }
-@media(max-width:400px){
+@media(max-width:403px){
     .Btn{
-        width: 160px;
+        width: 140px;
     }
 }
 @media(max-width:350px){
@@ -49,4 +49,9 @@
     width: 135px;
     font-size: medium;
 }
+}
+@media(max-width:314px){
+    .Btn{
+        width: 125px;
+    }
 }
