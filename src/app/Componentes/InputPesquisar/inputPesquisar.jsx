@@ -14,7 +14,7 @@ export default function BarraPesquisar(props){
             <Image className={style.imagemIcon} src={props.imagemIconPesquisar} alt={props.title} title={props.title}/>
             <input className={style.input} 
             value={props.value}
-             type="search"
+             type="text"
              onChange={props.onchange} 
              placeholder={props.placeholder} />
         </div>

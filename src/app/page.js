@@ -37,9 +37,8 @@ export default function Home() {
    return setListaCardapio(ProdutosCardapio.filter((produto)=> produto.categoria === Categoria))
 }
 
-const BuscarProduto = (textoDigitado) =>{ return setListaCardapio(ProdutosCardapio.filter((produto)=> produto.nome.toLocaleLowerCase().includes(textoDigitado.toLocaleLowerCase()) || 
-   ProdutosCardapio.descricao.toLocaleLowerCase().includes(textoDigitado.toLocaleLowerCase())
-  ))
+const BuscarProduto = (textoDigitado) =>{setListaCardapio(ProdutosCardapio.filter((produto)=> produto.nome.toLocaleLowerCase().includes(textoDigitado.toLocaleLowerCase()) || 
+   produto.descricao.toLocaleLowerCase().includes(textoDigitado.toLocaleLowerCase()) || produto.categoria.toLocaleLowerCase().includes(textoDigitado.toLocaleLowerCase())))
 }
 
   return (
@@ -57,7 +56,7 @@ const BuscarProduto = (textoDigitado) =>{ return setListaCardapio(ProdutosCardap
       <BarraPesquisar
       imagemIconPesquisar={LupaPesquisar} 
       title="Pesquisar" 
-      placeholder="Pesquise um prato ou bebidas de nosso restaurante" onchage={(event) =>BuscarProduto(event.target.value)}/>
+      placeholder="Pesquise um prato ou bebidas de nosso restaurante" onchange={(event) =>BuscarProduto(event.target.value)}/>
      </section>
      <section className={styles.secaoCardsPratos}>
      {listaCardapio.map( (produto) =>( 
@@ -70,9 +69,7 @@ const BuscarProduto = (textoDigitado) =>{ return setListaCardapio(ProdutosCardap
         valorItem={produto.preco} />
       )) 
       }
-     </section>
-    
+     </section> 
     </main>
   );
 }
-// <Footer link="/" textoFooter="Desenvolvido por Tarcisio H" imagemIconBtn={SetaVoltarTopo} />
